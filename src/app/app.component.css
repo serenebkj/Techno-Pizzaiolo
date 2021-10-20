@@ -1,0 +1,49 @@
+#menu
+{
+    border: white;
+    background-color: white;
+    width: 3%;
+    margin-left: 40%;
+    padding-left: 1%;
+    padding-right:1%;
+}
+.img{
+    
+    width: 100%;
+}
+.price{
+    color: rgb(235, 21, 21);
+    font-weight: 1000;
+    padding-left: 10px; 
+}
+.heart{
+    width:20px;
+   float: right;   
+   padding-right: 10px;
+}
+.pizzaName
+{
+    font-size: 20px;
+    font-weight: 470;
+    padding-left: 10px; 
+}
+.pizzaDescription
+{
+    font-weight: 450;
+    padding-left: 10px; 
+}
+.btn {
+    border-radius: 12px;
+    height: 30px;
+    width: 110px;
+    background-color: rgb(245, 207, 245); float: top;
+    font-weight: 700;
+    float: right;
+    margin-bottom: 30px;
+     margin-right: 10px;
+  }
+  #rcorners2 {
+    border-radius: 25px;
+    border: 10px rgb(245, 207, 245); 
+    height: 520px;  
+  }

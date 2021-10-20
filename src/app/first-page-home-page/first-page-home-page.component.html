@@ -1,0 +1,18 @@
+
+<div id="sect1" class="ex1"> 
+    <label for="Location" class="ex1"  style="font-family:'Courier New', Courier, monospace; font-size:xx-large; font-weight: bold;" >Enter Location </label>
+    <br>
+    
+    <select name="" class="ex1"  style="width: 200px" >
+    
+      <!-- <i class="material-icons">place</i> -->
+      <option *ngFor="let region of regions" [value]="region.RegionName">
+              {{region.RegionName}}
+      </option>
+      
+    </select>
+    <button (click)="NavigateToMenu()" >Submit</button>
+    
+    
+    </div>
+    

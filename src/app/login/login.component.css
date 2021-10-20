@@ -1,0 +1,26 @@
+.form
+{
+    width: 200px;
+    height: 20px;
+    background-color: thistle;
+    margin-left: 2%;
+}
+.btn
+{
+    margin-left: 80px;
+    margin-top: 20px;
+    background-color: rgb(107, 175, 38);
+    color: white;
+    border-radius: 5px;
+}
+.heading{
+    font-size: 20px;
+    font-weight: 470;
+    color: aliceblue;    
+}
+.bg
+{
+    background-image:"assets\image\loginbg.jpeg"; 
+    width: 50%;
+    height: 40%
+}

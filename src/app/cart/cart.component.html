@@ -1,0 +1,35 @@
+<mat-card>
+  <div style="padding-right: 5px;">
+    <div style="text-align: center; font-weight: 500; font-size: 20px;">My Cart</div>
+    <div>
+      <table class="table table-striped">
+        <thead >
+          <tr>
+            <th scope="col" style="color: royalblue;">Name</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col" style="color: royalblue;">Price</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            
+          </tr>
+        </thead>
+        <tr *ngFor ="let items of products" >
+                
+          <th scope="col">{{items.PizzaName}}</th>
+          <th scope="col"></th>
+          <th scope="col"></th>
+          <th scope="col"><span>&#8377;</span>{{items.Price}}</th>
+          <th scope="col"></th>
+          <th scope="col"> <button (click)="removeItem(items)" class="btn btn-danger"><i class="fas" style="font-size:25px"> &#xf1f8; </i></button></th>
+          
+        </tr>
+      </table>
+    </div>
+    <br>
+    <p style="margin-left: 60px; color: seagreen;font-weight: 800;">Total:<span>&#8377;</span>{{grandTotal}}</p>
+    <button mat-raised-button color="accent" style="margin-left: 60px;" (click)="NavigateToBill()"
+      >Done</button>
+  </div>
+</mat-card>
+

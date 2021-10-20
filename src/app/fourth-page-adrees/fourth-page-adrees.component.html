@@ -1,0 +1,22 @@
+
+
+<div class="card">
+  <div class="container" *ngIf="Customer.FirstName!=0">
+    <h4><b>Delivery Address</b></h4>
+    <p>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <i class="fa fa-map-marker" style="font-size:48px;color:black;  right:110px;"></i><br/>
+    {{Customer.FirstName}} {{Customer.LastName}}<br/>
+    {{Customer.Adress}}<br/>
+    {{Customer.HouseNumber}}<br/>
+    </p>
+  </div>
+  <div style="width: 90px;height: 150px;" *ngIf="Customer.FirstName==0">
+    <button (click)="NavigateSignUp()" style="margin-top: 50px; margin-left: 100px;">SignUp</button>
+    <br>
+    <br>
+    <button (click)="NavigateLogin()" style= "margin-left: 105px;">Login</button>
+  </div>
+</div>
+

@@ -1,0 +1,141 @@
+<div style="background-color: rgba(170, 169, 167, 0.199); ">
+  <div>
+    <app-navbar></app-navbar>
+
+  </div>
+
+  <div style="padding-left: 10px;">
+    <div id="menu">
+      <b>MENU</b>
+    </div>
+    <!-- <mat-grid-list cols="2">
+    <mat-grid-tile style="overflow: hidden;"> -->
+    <mat-grid-list cols="4" rowHeight="500px" rowWidth="500px">
+      <div *ngFor="let items of menu">
+
+        <mat-grid-tile style="border-radius: 25px; border: 30px rgb(255, 255, 255); ">
+          <div style="padding-right: 5px;">
+            <div id="rcorners2" style="background-color: rgb(245, 207, 245); float: top;">
+              <div>
+                <img class="img" src={{items.img}} />
+              </div>
+              <br>
+              <div class="price">
+                <img class="heart" src="assets\image\heart.png" />
+                <a> Price: <span>&#8377;</span>{{items.Price}} </a>
+              </div>
+              <br>
+              <div>
+                <p class="pizzaName">{{items.PizzaName}}</p>
+                <p class="pizzaDescription">{{items.Description}}</p>
+              </div>
+              <div>
+
+
+              </div>
+              <div>
+                
+                <button class="btn" (click)="displayCUstomize(items)"
+                  onclick="document.getElementById('myForm').style.display='block'"
+                  style="float: left;">CUSTOMIZE</button>
+              </div>
+            </div>
+          </div>
+        </mat-grid-tile>
+        <mat-grid-tile *ngIf="items.id==3">
+          <div>
+            <app-cart></app-cart>
+          </div>
+        </mat-grid-tile>
+      </div>
+    </mat-grid-list>
+
+
+    <!-- ---------------------------------------- -->
+    <div class="form-popup" id="myForm">
+      <form class="form-container">
+        <h1 style="margin:1px;padding:0">Customize Your Pizza</h1>
+        <br>
+        <b>{{ CustomizeName}} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{CustomizePrice}}</b>
+        <br>
+        <mat-form-field appearance="fill" style="width: 100px;  padding-left: 10px;">
+          <mat-label>Size</mat-label>
+          <mat-select [(value)]="sizeAddition" (valueChange)="priceChange($event)">
+            <mat-option *ngFor="let size of sizes" [value]="size">
+              {{size}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill" style="width: 180px; float: right;  padding-right: 10px;">
+          <mat-label>Crust</mat-label>
+          <mat-select [(value)]="crustAddition" (valueChange)="priceChangeForCrust($event)">
+            <mat-option *ngFor="let crust of crusts" [value]="crust">
+              {{crust}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <div class="Topcard">
+          <div style="margin-top: 15px;" class="column"><input type="checkbox" unchecked id="myCheck" (click)="cheeseTick()">
+          </div>
+          <div style="margin-top: 15px;" class="column">
+            Add extra cheese</div>
+          <div style="margin-top: 15px;" class="column">
+            <p style="color: red;">₹75</p>
+          </div>
+
+          <!-- <div id="text" *ngIf="addCheese">Extra cheese added</div> -->
+        </div>
+        <br>
+        <b>Add veg toppings @₹60 each</b>
+        <div class="row">
+          <div *ngFor="let toppings of vegToppings">
+            <div class="column">
+              <div class="card">
+                <p style="margin-bottom:0;padding:0;margin-left: 25px;">{{toppings.ToppingName}}</p><img
+                  style="margin-left: 20px; margin-top: 5px;" src="{{toppings.img}}">
+                <div><input type="checkbox" id="myCheck" (click)="vegToppingsTick(toppings)"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <b>Add non-veg toppings @₹75 each</b>
+          <div *ngFor="let toppings of nonVegToppings">
+            <div style="margin-top: 5px;" class="column">
+              <div class="card">
+                <p style="margin-bottom:0;padding:0;margin-left: 25px;">{{toppings.ToppingName}}</p><img
+                  style="margin-left: 20px; margin-top: 5px;" src="{{toppings.img}}">
+                <input type="checkbox" (click)=nonVegToppingsTick(toppings)>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+       
+
+        <button style="margin-top:10px" type="button" class="btn cancel" (click)=AddtoCart(CustomizeName,CustomizePrice)
+          onclick="document.getElementById('myForm').style.display='none'">ADD TO CART</button>
+      </form>
+    </div>
+
+    <script>
+      var theCustomize = document.getElementById("myForm");
+      window.onclick = function (event) {
+        if (event.target == theCustomize) {
+          theCustomize.style.display = "block";
+        }
+      }
+
+      var checkBox = document.getElementById("myCheck");
+      var text = document.getElementById("text");
+      window.onclick = function (event) {
+        if (checkBox.checked == true) {
+          text.style.display = "block";
+        } else {
+          text.style.display = "none";
+        }
+      }
+
+    </script>

@@ -1,0 +1,142 @@
+.topnavbar {
+  width: 100%;
+  background-color:pink;
+  height:70px;
+}
+.topnavbar a{
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.bottomnavbar {
+  background-color:pink;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height:70px;
+  
+}
+.bottomnavbar a{
+  margin-left: 75%;
+  color: black;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold; 
+  display:block;
+  text-align: center;
+  padding: 14px 16px;
+}
+
+/* Style the tab */
+.tab {
+overflow: hidden;
+border: 1px solid #ccc;
+background-color: #f1f1f1;
+margin-top: 2%;
+margin-left: 5%;
+ height: 100px; 
+
+}
+.navbars{
+margin-right: 50px;
+float: right;
+height: 40px;
+width:140px;
+margin-top: 0px;
+
+}
+
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+background-color: #ddd;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea{
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  background-color: #f1f1f1;
+}
+
+.column {
+  float: left;
+  width: 90%;
+ margin-left: 7%;
+}
+
+
+/* Floating column for inputs: 75% width */
+.col-75 {
+  float: left;
+  width: 40%;
+  margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.navbartwo{
+  margin-right: 50px;
+  float: right;
+  height: 40px;
+  width: 140px;
+  margin-top: 0px;
+  margin-bottom: 20%;
+
+}
+
+/* Style the submit button */
+input[type=submit] {
+  background-color:palevioletred;
+  color:black;
+  padding: 20px 40px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  margin-top: 2.9%;
+  position: relative;
+  height:70px;
+  font-size: 25px;
+  margin-right: 38%;
+}
+.submit:hover{
+  background-color: #ddd;
+}
+
+.button {
+  background-color:darksalmon;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor:pointer;
+}
+
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+/* @media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+ */

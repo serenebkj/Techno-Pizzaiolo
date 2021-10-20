@@ -1,0 +1,25 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+<div class="nav">
+    <div>
+        <img class="img" src="assets\image\logo.png">
+        <a style="float:right"> My account
+           
+        </a>
+        <img style="width:30px; float: right; ;margin-top: 5px;" src="assets\image\avatar.png">
+        <form appearance="fill" style="float: right;height: 5px;">
+            <select style="background-color: rgb(240, 84, 110);margin-top: 10px;">
+                <option *ngFor="let place of places" [value]="place">
+                    {{place}}
+                </option>
+            </select>
+        </form>
+        <img style="width:10px; float: right; margin-right: 10px;margin-top: 13px;" src="assets\image\map.png">
+        <label style="color: white; margin-top: 10px; float: right;margin-right: 68%;">Techno Pizzaiolo </label>
+
+
+    </div>
+    <div>
+
+    </div>
+</div>

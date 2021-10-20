@@ -1,0 +1,55 @@
+<mat-card >
+    <div style="padding-top: 10%; padding-left: 40%;">
+        <p class="heading">Please Enter Your Number:</p>
+        <form [formGroup] = "requiredForm" (ngSubmit) = "onSubmit()">
+            <div class="form-group col">
+                <label class="center-block">
+                    <input class="form" [(ngModel)]="number" [ngModelOptions]="{standalone: true}">
+                </label>
+            
+            <!-- <div *ngIf="requiredForm.controls['number'].invalid && requiredForm.controls['number'].touched"
+                class="alert alert-danger">
+                <div *ngIf="requiredForm.controls['number'].errors?.required">
+                    Number is required.
+                </div>    
+                <div *ngIf="requiredForm.controls['number'].errors?.pattern">Invalid phone number.</div>
+                
+            </div> -->
+            
+            </div>    
+            <div class="text-center">
+                <button class="btn"(click)="searchForDetails(number)">Search</button>
+            </div>
+        </form>
+    </div>
+</mat-card>
+
+<mat-card *ngIf="displayTable" >
+
+    <table style="width:100%">
+        <tr>
+          <th>First Name:</th>
+          <td>{{Customer.FirstName}}</td>
+        </tr>
+        <tr>
+          <th>Last Name:</th>
+          <td>{{Customer.LastName}}</td>
+        </tr>
+        <tr>
+          <th>Email:</th>
+          <td>{{Customer.Email}}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{Customer.Adress}}</td>
+        </tr>
+        <tr>
+            <th>House Number:</th>
+            <td>{{Customer.HouseNumber}}</td>
+        </tr>
+        <tr>
+            <button (click)= "NavigateToPayment()">Done</button>
+        </tr>
+      </table>
+
+</mat-card>

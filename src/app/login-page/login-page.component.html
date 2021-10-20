@@ -1,0 +1,249 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<h1 class="form-signin-heading" style="margin-left: 8.2%;font-size: 30px; color:royalblue;">Login</h1>
+<div class="container">
+  
+    <form [formGroup] = "registerForm" (ngSubmit) = "onSubmit()">
+      <div class="form-row">
+        <div class="form-group col">
+                <label>First Name</label>
+                <input type="text"  class="form-control" [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}"  />
+                <!-- <div *ngIf="submit && getForm.firstName.errors" class="alert alert-danger">
+                    <div *ngIf="getForm.firstName.errors.required">First Name is required</div>
+                </div> -->
+        </div>
+            <div class="form-group col">
+                <label>Last Name</label>
+                <input type="text"  class="form-control" [ngClass]="{ 'is-invalid': submit && getForm.lastName.errors }"[(ngModel)]="lastName" [ngModelOptions]="{standalone: true}" />
+                <!-- <div *ngIf="submit && getForm.lastName.errors" class="alert alert-danger">
+                    <div *ngIf="getForm.lastName.errors.required">Last name is required</div>
+                    
+                </div>-->
+            </div>
+            <div class="form-group col">
+                <label>Email</label>
+                <input type="text"  class="form-control" [ngClass]="{ 'is-invalid': submit && getForm.email.errors }"[(ngModel)]="email" [ngModelOptions]="{standalone: true}" />
+                <!-- <div *ngIf="submit && getForm.email.errors" class="invalid-feedback">
+                    <div *ngIf="getForm.email.errors.required">Email is required</div>
+                    <div *ngIf="getForm.email.errors.email">Email must be a valid email address</div>
+                </div> -->
+            </div>
+            <div class="form-row">
+              <label>Address</label>
+              <input type="text"  class="form-control" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" />
+              <!-- <div *ngIf="submit && getForm.address.errors" class="alert alert-danger">
+                  <div *ngIf="getForm.address.errors.required">Adress is required</div>
+              </div> -->
+            </div>
+            <div class="form-row">
+              <label>House Number</label>
+              <input type="text"  class="form-control" [(ngModel)]="housenumber" [ngModelOptions]="{standalone: true}" />
+              <!-- <div *ngIf="submit && getForm.housenumber.errors" class="alert alert-danger">
+                <div *ngIf="registerForm.controls['housenumber'].errors?.required">House Number is required.</div>
+                <div *ngIf="registerForm.controls['housenumber'].errors?.pattern">Invalid House number.</div>
+              </div> -->
+            </div>
+            <div class="form-row">
+              <label>Phone Number</label>
+              <input type="text"  class="form-control"[(ngModel)]="number" [ngModelOptions]="{standalone: true}" req  />
+              <!-- <div *ngIf="submit && getForm.number.errors" class="alert alert-danger">
+                <div *ngIf="registerForm.controls['number'].errors?.required">Number is required.</div>
+                <div *ngIf="registerForm.controls['number'].errors?.pattern">Invalid phone number.</div>
+              </div> -->
+            </div>
+    
+            <div class="text-center">
+                <button class="btn btn-primary mr-1"(click)="StoreValue()" (click)="NavigateToPayment()">Register</button>
+                
+            </div>
+      </div>    
+    </form>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <html>
+
+<head>
+  Pizza App
+</head>
+
+<body>
+
+  <div class="topnavbar">
+    <a class="active" href="#">Add Address </a>
+  </div>
+
+  <div class="tab">
+    <h3>Login to use your saved Account</h3>
+    <button class="navbars">My Address</button>
+  </div>
+
+  <h2>Fill details below</h2>
+  <form [formGroup]="registerForm"(ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-75">
+        <div class=column>
+          <input type="text" id="fname" placeholder="Mobile Number"
+            [ngClass]="{'is-invalid': submitted && getForm.number.errors}" [(ngModel)]="number"
+            [ngModelOptions]="{standalone: true}" />
+
+          <div *ngIf="submitted && getForm.number.errors" class="invalid-feedback">
+            <div *ngIf="getForm.number.errors.required">Mobile Number is required</div>
+          </div>
+        </div>
+      </div>
+
+        <div class="row">
+
+          <div class="col-75">
+            <input type="text" id="lname" placeholder="First Name"
+              [ngClass]="{ 'is-invalid': submitted && getForm.firstName.errors }" [(ngModel)]="firstName"
+              [ngModelOptions]="{standalone:true}" />
+            <div *ngIf="submitted && getForm.firstName.errors" class="invalid-feedback">
+              <div *ngIf="getForm.firstName.errors.required">First Name is required</div>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col-75">
+            <div class="column">
+              <input type="text" id="lname" placeholder="Last Name"
+                [ngClass]="{ 'is-invalid': submitted && getForm.lastName.errors }" [(ngModel)]="lastName"
+                [ngModelOptions]="{standalone: true}" />
+              <div *ngIf="submitted && getForm.lastName.errors" class="invalid-feedback">
+                <div *ngIf="getForm.lastName.errors.required">Last Name is required</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="row">
+            <div class="col-75">
+              <input type="text" id="Iname" placeholder="Address"
+                [ngClass]="{ 'is-invalid': submitted && getForm.address.errors }" [(ngModel)]="address"
+                [ngModelOptions]="{standalone: true}" />
+              <div *ngIf="submitted && getForm.address.errors" class="invalid-feedback">
+                <div *ngIf="getForm.address.errors.required">Address is required</div>
+              </div>
+            </div>
+          </div>
+        
+
+
+        <div class="row">
+          <div class="col-75">
+            <div class="column">
+              <input type="text" id="Iname" placeholder="Email Address"
+                [ngClass]="{ 'is-invalid': submitted && getForm.email.errors }" [(ngModel)]="email"
+                [ngModelOptions]="{standalone: true}" />
+              <div *ngIf="submitted && getForm.email.errors" class="invalid-feedback">
+                <div *ngIf="getForm.email.errors.required">Email is required</div>
+                <div *ngIf="getForm.email.errors.email">Email must be a valid email address</div>
+              </div>
+            </div>
+          </div>
+        </div>  
+
+
+        <div class="row">
+            <div class="col-75">
+              <input type="text" id="Iname" placeholder="House Number"
+                [ngClass]="{ 'is-invalid': submitted && getForm.housenumber.errors }" />
+              <div *ngIf="submitted && getForm.housenumber.errors" class="invalid-feedback" [(ngModel)]="housenumber"
+                [ngModelOptions]="{standalone: true}">
+                <div *ngIf="getForm.housenumber.errors.required">House Number is required</div>
+              </div>
+            </div>
+        </div>
+        
+        <div class="row">
+          <button class="button" type="submit" >Register</button>
+
+          
+        </div>
+    </div>
+  </form>   -->
+
+        <!-- secondlast tab -->
+        <!-- <div class="tab">
+          <div class="tabbar"></div>
+          <h3>Location Thiruvanamtupuram</h3>
+          <button class="navbartwo">Edit</button>
+        </div>
+      </div> -->
+
+
+      <!-- </div> -->
+      <!-- submitbutton -->
+      <!-- <div class="row">
+      <button (click)="onSubmit()" class="button" type="submit" form="nameform" value="submit">Save and Continue</button>
+
+       <input class="submit" type="submit" value="Save and Continue"> -->
+      <!-- </div> --> -->
+
+      <!-- </div> -->
+      <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> -->
+      <!-- <div class="form-group col-5"> -->
+
+      <!-- <input type="text" formControlName="firstName" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && getForm.firstName.errors }" />
+      <div *ngIf="submitted && getForm.firstName.errors" class="invalid-feedback">
+        <div *ngIf="getForm.firstName.errors.required">First Name is required</div>
+      </div> -->
+      <!-- </div>
+    <div class="form-group col"> -->
+
+      <!-- <input type="text" formControlName="email" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && getForm.email.errors }" />
+      <div *ngIf="submitted && getForm.email.errors" class="invalid-feedback">
+        <div *ngIf="getForm.email.errors.required">Email is required</div>
+        <div *ngIf="getForm.email.errors.email">Email must be a valid email address</div>
+      </div> -->
+      <!-- </div>
+    <div class="form-group col-5"> -->
+
+      <!-- <input type="text" formControlName="lastName" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && getForm.lastName.errors }" />
+      <div *ngIf="submitted && getForm.lastName.errors" class="invalid-feedback">
+        <div *ngIf="getForm.lastName.errors.required">Last Name is required</div>
+      </div> -->
+      <!-- <input type="text" formControlName="address" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && getForm.address.errors }" />
+      <div *ngIf="submitted && getForm.address.errors" class="invalid-feedback">
+        <div *ngIf="getForm.address.errors.required">Address is required</div>
+      </div> -->
+      <!-- <input type="text" formControlName="housenumber" class="form-control"
+        [ngClass]="{ 'is-invalid': submitted && getForm.housenumber.errors }" />
+      <div *ngIf="submitted && getForm.housenumber.errors" class="invalid-feedback">
+        <div *ngIf="getForm.housenumber.errors.required">House Number is required</div>
+      </div> -->
+      <!-- </div> -->
+      <!-- </form> 
+ </body>  -->

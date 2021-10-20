@@ -1,0 +1,29 @@
+
+/* .container { 
+  
+  margin: left 80px;;
+} */
+
+.vertical-center {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(50%);
+    transform: translateY(50%);
+  }
+  .vertical-center1 {
+      margin: 0;
+      position: absolute;
+      top: 60%;
+      -ms-transform: translateY(50%);
+      transform: translateY(50%);
+    }
+    .dropdown-menu-center {
+      left: 0% !important;
+      right: auto !important;
+      text-align: center !important;
+      transform: translate(80%, 0) !important;
+    }
+    .ex1 {
+      margin-left: 80px;
+    }
